@@ -1,0 +1,22 @@
+server:
+  port: 0
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+spring:
+  application:
+    name: consumer1
+  kafka:
+    bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+    consumer:
+      group-id: member
+      enable-auto-commit: false
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    #  fetch-max-wait: 10s
+    #listener:
+    #  ack-mode: manual-immediate

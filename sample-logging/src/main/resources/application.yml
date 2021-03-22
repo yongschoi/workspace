@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: sample-logging
+
+opentracing:
+  jaeger:
+    udp-sender:
+      host: 127.0.0.1
+      port: 6831
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG

@@ -1,0 +1,17 @@
+server:
+  port: 0
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+spring:
+  application:
+    name: producer
+  kafka:
+    bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+    producer:
+      acks: 1 # default
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

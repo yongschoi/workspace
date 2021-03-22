@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: local
+---
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  application:
+    name: app-test
+      
+logging:
+  pattern:
+    console: "%-5level %d{HH:mm:ss.SSS} %logger[%method:%line] - %msg%n"
+  level:
+    cj: DEBUG

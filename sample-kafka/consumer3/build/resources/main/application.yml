@@ -1,0 +1,17 @@
+server:
+  port: 0
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+spring:
+  application:
+    name: consumer3
+  kafka:
+    bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+    consumer:
+      group-id: member
+      enable-auto-commit: false
+      auto-offset-reset: latest

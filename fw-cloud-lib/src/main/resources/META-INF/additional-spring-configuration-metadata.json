@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "feign.basePackages",
+      "type": "java.lang.String",
+      "description": "Feign Client 패키지 설정"
+    }
+  ]
+}

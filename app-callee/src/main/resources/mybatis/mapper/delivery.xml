@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cj.bts.otw.dbmapper.DeliveryMapper">
+    <select id="findByNo" resultType="cj.bts.otw.entity.Delivery">
+        SELECT no, company, status 
+        FROM   `delivery`
+        WHERE  no = #{no}  
+    </select>
+    <select id="findAll" resultType="cj.bts.otw.entity.Delivery">
+        SELECT no, company, status 
+        FROM   `delivery`
+    </select>
+    <insert id="insert" parameterType="cj.bts.otw.dto.DeliveryDto">
+    	INSERT 
+    	INTO `delivery` (no, company, status) 
+    	VALUES ( #{no}, #{company}, #{status} )
+    </insert>
+    <delete id="delete" parameterType="cj.bts.otw.dto.DeliveryDto">
+    	DELETE 
+    	FROM `delivery`
+    	WHERE `no`= #{no}
+    </delete>
+</mapper>

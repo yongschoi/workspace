@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: local
+---
+server:
+  port: 8082
+
+spring:
+  profiles: local
+  application:
+    name: app-sub
+  kafka:
+    bootstrap-servers: localhost:9092
+    # bootstrap-servers: 10.88.11.196:9092,10.88.11.197:9092,10.88.11.198:9092    
+    consumer:
+      group-id: cash
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+                
+logging:
+  pattern:
+    console: "%-5level %d{HH:mm:ss.SSS} %logger[%method:%line] - %msg%n"
+  level:
+    bts: DEBUG

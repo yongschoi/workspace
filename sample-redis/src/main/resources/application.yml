@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+spring:
+  application:
+    name: sample-redis
+    redis:
+      lettuce:
+        pool:
+          max-active: 5
+          max-idle: 5
+          min-idle: 2
+      host: localhost
+      port: 6379
+      #cluster: #Redis Cluster Config(Master Node)
+      #  nodes: 127.0.0.1:6372,127.0.0.1:6375,127.0.0.1:6379
+

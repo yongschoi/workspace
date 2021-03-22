@@ -1,0 +1,13 @@
+server:
+  port: 0
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+spring:
+  application:
+    name: consumer_batch
+  kafka:
+    bootstrap-servers: localhost:9091,localhost:9092,localhost:9093

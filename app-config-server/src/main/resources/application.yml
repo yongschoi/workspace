@@ -1,0 +1,22 @@
+server:
+    port: 8888 #Config Server Default Port
+
+spring:
+  application:
+    name: app-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://C:\CJDev\HOME\config
+          searchPaths: test
+    bus:
+      enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh    

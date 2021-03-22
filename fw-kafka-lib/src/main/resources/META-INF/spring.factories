@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cj.bts.framework.kafka.ObjectMapperConfig,\
+cj.bts.framework.kafka.KafkaAPI

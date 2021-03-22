@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cj.bts.ord.dbmapper.OrderMasterMapper">
+    <select id="findByNo" resultType="cj.bts.ord.entity.OrderMaster">
+        SELECT no, customerId, customerName, pay, amount, orderAt, deliveryNo 
+        FROM   `orderMaster`
+        WHERE  no = #{no}  
+    </select>
+    <insert id="create" parameterType="cj.bts.ord.entity.OrderMaster">
+    	INSERT 
+    	INTO `orderMaster` (no, customerId, customerName, pay, amount, orderAt, deliveryNo) 
+    	VALUES ( #{no}, #{customerId}, #{customerName}, #{pay}, #{amount}, #{orderAt}, #{deliveryNo} )
+    </insert>
+</mapper>

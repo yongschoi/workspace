@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yongs.temp.db.ProductMapper">
+    <select id="findAll" resultType="yongs.temp.dto.Product">
+        SELECT * FROM `product`
+    </select>
+    <select id="findByCode" parameterType="String" resultType="yongs.temp.dto.Product">
+        SELECT * FROM `product` WHERE code = #{code} 
+    </select>
+    <select id="findByName" parameterType="String" resultType="yongs.temp.dto.Product">
+        SELECT * FROM `product` WHERE name = '%'+#{name}+'%' 
+    </select>
+       
+    <insert id="save" parameterType="yongs.temp.dto.Product">
+    	<!-- INSERT INTO `product` (code, name, amount) VALUES (#{code}, #{name}, #{amount}) -->
+    	INSERT INTO `product` (code, name, amount, refreshTime) VALUES (#{code}, #{name}, #{amount}, #{refreshTime} ) 
+    </insert>
+</mapper>

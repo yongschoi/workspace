@@ -1,0 +1,10 @@
+rootProject.name = 'sample-kafka'
+include 'common'
+include 'producer'
+include 'consumer1'
+include 'consumer2'
+include 'consumer3'
+include 'consumer_batch'
+include 'consumer_coffee'
+include 'consumer_concurrency'
+

@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "springdoc.version",
+      "type": "java.lang.String",
+      "description": "Open API 버전정보"
+    },
+	{
+      "name": "spring.add-messages",
+      "type": "java.util.List",
+      "description": "Spring message files."
+    }
+  ]
+}

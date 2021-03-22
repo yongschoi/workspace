@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: local
+---
+server:
+  port: 8081
+
+spring:
+  profiles: local
+  application:
+    name: app-pub
+  kafka:
+    bootstrap-servers: localhost:9092
+    # bootstrap-servers: 10.88.11.196:9092,10.88.11.197:9092,10.88.11.198:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+                
+logging:
+  pattern:
+    console: "%-5level %d{HH:mm:ss.SSS} %logger[%method:%line] - %msg%n"
+  level:
+    bts: DEBUG

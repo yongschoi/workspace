@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: local
+---
+server:
+  port: 8082
+
+spring:
+  profiles: local
+  application:
+    name: app-config-client 
+  cloud:
+    config:
+      uri:
+      - http://localhost:8888
+  kafka:
+    bootstrap-servers: localhost:9092 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh  
