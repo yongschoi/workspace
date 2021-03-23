@@ -30,13 +30,14 @@ import cj.bts.framework.util.MessageUtil;
  * 2021. 2. 10. yschoi21(yschoi21@cj.net) 최초작성
  * --------------------------------------------------------------
  * </pre>
- */ 
+ */
 @Configuration
 public class MessageConfig implements WebMvcConfigurer {
 	@Value("#{'${spring.add-messages:classpath:/messages/message}'.split(',')}")
 	List<String> addMessages;
 
-    private MessageSource messageSource() {
+	@Bean
+    public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasenames("classpath:/messages/message",
         						   "classpath:/messages/validation");
@@ -44,11 +45,6 @@ public class MessageConfig implements WebMvcConfigurer {
         messageSource.setDefaultEncoding("UTF-8");
 
         return messageSource;
-    }
-
-    @Bean
-    public void setMessageUtil() {
-    	new MessageUtil().setMessageSource(messageSource());
     }
 
     @Override

@@ -8,9 +8,9 @@ import org.springframework.context.MessageSource;
  * <pre>
  * Copyright (c) 2021 CJ OliveNetworks
  * All rights reserved.
- * 
+ *
  * This software is the proprietary information of CJ OliveNetworks
- * </pre> 
+ * </pre>
  *
  * @author yschoi21
  * @since 2021. 1. 28.
@@ -22,13 +22,15 @@ import org.springframework.context.MessageSource;
  * --------------------------------------------------------------
  * </pre>
  */
+ @Component
 public class MessageUtil {
     private static MessageSource messageSource;
 
+    @Autowired
     public void setMessageSource(MessageSource messageSource) {
     	MessageUtil.messageSource = messageSource;
     }
-    
+
     /**
      * key로 정의된 message를 가져 온다.<br>
      *<br>
@@ -50,7 +52,7 @@ public class MessageUtil {
     public static String getMessage(String key, Object[] args) {
         return getMessage(key, args, Locale.getDefault());
     }
- 
+
     /**
      * 해당 locale의 message를 가져온다.<br>
      *<br>
