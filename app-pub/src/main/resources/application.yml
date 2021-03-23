@@ -15,9 +15,9 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-                
+
 logging:
   pattern:
     console: "%-5level %d{HH:mm:ss.SSS} %logger[%method:%line] - %msg%n"
   level:
-    bts: DEBUG
+    cj: DEBUG
