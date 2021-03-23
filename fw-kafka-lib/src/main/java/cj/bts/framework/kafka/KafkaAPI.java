@@ -6,6 +6,7 @@ import org.springframework.kafka.core.KafkaProducerException;
 import org.springframework.kafka.core.KafkaSendCallback;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
+import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,8 +31,9 @@ import lombok.extern.slf4j.Slf4j;
  * 2021. 2. 24. yschoi21(yschoi21@cj.net) 최초작성
  * --------------------------------------------------------------
  * </pre>
- */
+ */ 
 @Slf4j
+@Component
 public class KafkaAPI {
 	@Autowired
     private KafkaTemplate<String, String> kafkaTemplate;	
