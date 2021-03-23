@@ -1,5 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 cj.bts.framework.config.CorsConfig,\
 cj.bts.framework.config.MessageConfig,\
-cj.bts.framework.config.OpenAPIConfig,\
-cj.bts.framework.advice.ExceptionAdvice
+cj.bts.framework.config.OpenAPIConfig
