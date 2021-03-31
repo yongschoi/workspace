@@ -1,0 +1,36 @@
+version: '3'
+services:
+   redis1:
+      image: redis
+      network_mode: "host"
+      environment:
+      - CLIENTHOST=localhost
+      - CLIENTPORT=6371
+      volumes:
+      - "/home/yongschoi/data/redis_cluster/conf/redis.conf:/usr/local/etc/redis/redis.conf"
+
+   redis2:
+      image: redis
+      network_mode: "host"
+      environment:
+      - CLIENTHOST=localhost
+      - CLIENTPORT=6379
+      volumes:
+      - "/home/yongschoi/data/redis_cluster/conf/redis.conf:/usr/local/etc/redis/redis.conf"
+
+
+
+
+   redis-slave:
+      image: redis:5.0-alpine
+      build:
+         context: ..
+         dockerfile: Dockerfile
+      network_mode: "host"
+      environment:
+      - REQUIREPASS=<password>
+      - CLIENTHOST=192.168.137.101
+      - CLIENTPORT=6380
+      volumes:
+      - "../../new_redis-data/redis2:/data"
+      restart: always
